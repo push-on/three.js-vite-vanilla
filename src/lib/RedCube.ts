@@ -8,7 +8,7 @@ const scene = new THREE.Scene()
 
 // Object properties
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
-const cubeMaterial = new THREE.MeshBasicMaterial({ color: '#f76394' })
+const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xd5d590 })
 const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
 scene.add(cubeMesh)
 
@@ -46,14 +46,29 @@ camera.lookAt(cubeMesh.position)
 // cubeMesh.rotation.reorder("XYZ")
 
 // Object Groups
+const group = new THREE.Group()
+scene.add(group)
 
+const cube_01 = new THREE.Mesh(
+	new THREE.BoxGeometry(0.5, 0.5, 0.5),
+	new THREE.MeshBasicMaterial({ color: 0x4fc1ff })
+)
 
+const cube_02 = new THREE.Mesh(
+	new THREE.BoxGeometry(0.5, 0.5, 0.5),
+	new THREE.MeshBasicMaterial({ color: 0x4ec9b0 })
+)
 
+const cube_03 = new THREE.Mesh(
+	new THREE.BoxGeometry(0.5, 0.5, 0.5),
+	new THREE.MeshBasicMaterial({ color: 0xcc74cb })
+)
 
+cube_01.position.set(0, 1, 0)
+cube_02.position.set(1, 1, 0)
+cube_03.position.set(-1, 1, 0)
 
-
-
-
+group.add(cube_01, cube_02, cube_03)
 // Render
 const canvas = document.querySelector('canvas.webgl')
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true } as any)
