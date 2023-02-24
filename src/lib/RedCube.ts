@@ -13,9 +13,9 @@ const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial)
 scene.add(cubeMesh)
 
 // Camera properties
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+const camera = new THREE.PerspectiveCamera(40, sizes.width / sizes.height)
 scene.add(camera)
-camera.position.set(1, 1, 3)
+camera.position.set(2, 2, 6)
 // cubeMesh.rotation.set(0.5, 1, 0)
 
 // position
@@ -68,7 +68,11 @@ cube_01.position.set(0, 1, 0)
 cube_02.position.set(1, 1, 0)
 cube_03.position.set(-1, 1, 0)
 
+group.scale.set(1, 1, 1.5)
+
 group.add(cube_01, cube_02, cube_03)
+
+
 // Render
 const canvas = document.querySelector('canvas.webgl')
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true } as any)
