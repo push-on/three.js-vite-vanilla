@@ -18,8 +18,19 @@ const canvas = document.querySelector('canvas.webgl')
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true } as any)
 renderer.setSize(sizes.width, sizes.height)
 
+
+
+let time = Date.now()
 // GameLoop
 export const AnimationLoop = () => {
-	window.requestAnimationFrame(AnimationLoop)
+
+	const curretTime = Date.now()
+	const deltaTime = curretTime - time
+	time = curretTime
+
+	console.log(deltaTime)
+
+	// cubeMesh.rotation.y += 0.02
 	renderer.render(scene, camera)
+	window.requestAnimationFrame(AnimationLoop)
 }
