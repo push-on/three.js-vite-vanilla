@@ -38,7 +38,6 @@ export const AnimationLoop = () => {
 	cubeMesh.position.x = Math.cos(elapsedTime)
 	cubeMesh.position.y = Math.sin(elapsedTime)
 
-
 	// const curretTime = Date.now()
 	// const deltaTime = curretTime - time
 	// time = curretTime
