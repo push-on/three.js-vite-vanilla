@@ -2,6 +2,7 @@ import * as THREE from 'three'
 
 const sizes = { width: 600, height: 600 }
 const scene = new THREE.Scene()
+
 const cubeMesh = new THREE.Mesh(
 	new THREE.BoxGeometry(0.2, 0.2, 0.5),
 	new THREE.MeshBasicMaterial({ color: 0xcc74c6 })
@@ -11,6 +12,7 @@ const cubeMesh_2 = new THREE.Mesh(
 	new THREE.MeshBasicMaterial({ color: 0x1f1f1f })
 )
 scene.add(cubeMesh, cubeMesh_2)
+
 const camera = new THREE.PerspectiveCamera(40, sizes.width / sizes.height)
 camera.position.set(2, 2, 3)
 camera.lookAt(cubeMesh.position)
@@ -22,17 +24,15 @@ const canvas = document.querySelector('canvas.webgl')
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true } as any)
 renderer.setSize(sizes.width, sizes.height)
 
-
-// using threejs Clock
-
 // let time = Date.now()
 
+// using threejs Clock
 const clock = new THREE.Clock()
+
 // GameLoop
 export const AnimationLoop = () => {
+
 	// Three.js Clock
-
-
 	const elapsedTime = clock.getElapsedTime()
 	cubeMesh.rotation.y = elapsedTime * Math.PI * 2
 	cubeMesh.position.x = Math.cos(elapsedTime)
