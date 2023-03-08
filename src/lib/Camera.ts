@@ -18,7 +18,6 @@ renderer.setSize(sizes.width, sizes.height)
 
 const clock = new THREE.Clock()
 
-
 export const AnimationLoop = () => {
 
 	const elapsedTime = clock.getElapsedTime()

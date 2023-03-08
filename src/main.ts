@@ -8,5 +8,4 @@ import { AnimationLoop as Camera } from './lib/Camera'
 // AnimationLoop()
 // GSAP()
 
-
 Camera()
