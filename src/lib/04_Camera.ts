@@ -1,17 +1,24 @@
+/*
+types of cameras {perspective,orthographic } 
+camera properties
+creating a custom camera control using mouse
+rotate around an object / point in space
+using threejs builtin adon / preset to control a camera
+*/
+
 import * as THREE from 'three'
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const sizes = { width: 600, height: 600 }
 const AR = sizes.width / sizes.height
-const cursor = { x: 0, y: 0 }
 
-window.addEventListener("mousemove", (event) => {
-	cursor.x = event.clientX / sizes.width - 0.5
-	cursor.y = - (event.clientY / sizes.height - 0.5)
-})
-
-
+// Get mouse position
+// const cursor = { x: 0, y: 0 }
+// window.addEventListener("mousemove", (event) => {
+// 	cursor.x = event.clientX / sizes.width - 0.5
+// 	cursor.y = - (event.clientY / sizes.height - 0.5)
+// 	console.log(cursor)
+// })
 
 const scene = new THREE.Scene()
 const cubeMesh = new THREE.Mesh(
@@ -37,7 +44,7 @@ const camera = new THREE.PerspectiveCamera(40, AR, clip.near, clip.far)
 // }
 // const camera = new THREE.OrthographicCamera(OC.Left, OC.Right, OC.Top, OC.Bottom, clip.near, clip.far)
 
-const i = 10
+const i = 5
 const c = { x: i, y: i, z: i }
 // const c = { x: 0, y: 2, z: i }
 camera.position.set(c.x, c.y, c.z)
@@ -57,8 +64,8 @@ renderer.setSize(sizes.width, sizes.height)
 // const speed = 20
 
 // contorls
-// const contorls = new TrackballControls(camera, canvas as any) 
 const contorls = new OrbitControls(camera, canvas as any)
+contorls.enableDamping = true
 
 // const clock = new THREE.Clock()
 export const AnimationLoop = () => {
@@ -74,6 +81,8 @@ export const AnimationLoop = () => {
 	// camera.position.y = cursor.y * speed
 
 	// camera.lookAt(new THREE.Vector3())
+
+	contorls.update()
 
 	renderer.render(scene, camera)
 	window.requestAnimationFrame(AnimationLoop)

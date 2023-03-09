@@ -9,10 +9,12 @@
   -webkit-text-size-adjust: none;
 }
 
+html,
 body {
   margin: 0;
   width: 100%;
-  /* background-color: rgb(39, 39, 39); */
+  overflow: hidden;
+  background-color: black;
 }
 
 *,
@@ -21,6 +23,7 @@ body {
   box-sizing: border-box;
 }
 
+canvas,
 button,
 select,
 input,
@@ -66,4 +69,8 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
 button {
   background-color: white;
   color: black
+}
+
+.webgl {
+  position: fixed;
 }

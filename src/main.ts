@@ -1,11 +1,12 @@
 import './style.css'
-// import { redCube } from './lib/RedCube'
-// import { AnimationLoop } from './lib/BasicAnimation'
-// import { AnimationLoop as GSAP } from './lib/GSAP'
-import { AnimationLoop as Camera } from './lib/Camera'
+// import { redCube } from './lib/01_RedCube'
+// import { AnimationLoop } from './lib/02_BasicAnimation'
+// import { AnimationLoop as GSAP } from './lib/03_GSAP'
+// import { AnimationLoop as Camera } from './lib/04_Camera'
+import { AnimationLoop as FullScreen } from './lib/05_FullScreen'
 
 // redCube
 // AnimationLoop()
 // GSAP()
-
-Camera()
+// Camera()
+FullScreen()
