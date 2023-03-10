@@ -11,4 +11,4 @@ import { AnimationLoop as Geometry } from './lib/06_Geometry'
 // GSAP()
 // Camera()
 // FullScreen()
-Geometry
+Geometry()

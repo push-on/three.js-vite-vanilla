@@ -6,7 +6,8 @@ const scene = new THREE.Scene()
 // Camera Settings
 const sizes = { width: window.innerWidth, height: window.innerHeight }
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height)
-camera.position.set(10, 10, 10)
+const i = 3
+camera.position.set(i, i, i)
 camera.lookAt(new THREE.Vector3())
 scene.add(camera)
 // Helpers
